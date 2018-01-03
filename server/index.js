@@ -6,13 +6,16 @@ const keys = require('./config/keys.js');
 const app = express();
 
 passport.use(
-  new GoogleStrategy( {
+  new GoogleStrategy(
+  {
     clientID: keys.googleClientID,
     clientSecret: keys.googleClientSecret,
     callbackURL: '/auth/google/callback'
-  }, (accessToken) => {
-    console.log(accessToken);
-  })
+  },
+    (accessToken) => {
+      console.log(accessToken);
+    }
+  )
 );
 
 const PORT = process.env.PORT || 5000;
