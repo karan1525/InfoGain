@@ -5,6 +5,10 @@ const keys = require('../config/keys.js');
 
 const User = mongoose.model('users');
 
+passport.serializeUser((user, done) => { // user -> whatever was pulled out of DB
+  done(null, user.id);
+});
+
 passport.use(
   new GoogleStrategy(
   {
@@ -25,7 +29,6 @@ passport.use(
               .then( user => done(null, user));
           }
         })
-
     }
   )
 );
