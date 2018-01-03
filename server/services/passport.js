@@ -6,7 +6,7 @@ const keys = require('../config/keys.js');
 const User = mongoose.model('users');
 
 passport.serializeUser((user, done) => { // user -> whatever was pulled out of DB
-  done(null, user.id);
+  done(null, user.id); // not the profile ID -> MongoDB ID 
 });
 
 passport.use(
