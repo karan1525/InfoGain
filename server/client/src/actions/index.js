@@ -1,7 +1,12 @@
 import axios from 'axios';
 import { FETCH_USER } from './types';
 
-
-const fetchUser = () => {
-  axios.get('/api/current_user');
+export const fetchUser = () => {
+	// returning fetch_user action
+	// return action until ajax request is completed
+  return function(dispatch) {
+    axios
+    .get('/api/current_user')
+    .then(res => dispatch({ type: FETCH_USER, payload: res }));
+  }
 };
