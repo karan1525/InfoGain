@@ -7,6 +7,7 @@ const Landing = () => {
           Infogain
         </h1>
         Collect feedback from your users
+        <div><img src={'https://raw.githubusercontent.com/karan1525/Infogain/master/logos/main_logo.png'} /></div>;
       </div>
   );
 };
