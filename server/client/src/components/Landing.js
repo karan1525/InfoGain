@@ -6,8 +6,13 @@ const Landing = () => {
         <h1>
           Infogain
         </h1>
-        Collect feedback from your users
-        <div><img src={'https://raw.githubusercontent.com/karan1525/Infogain/master/logos/sharper_image.png'} alt="" /></div>;
+        <h5>Collect feedback from your users</h5>
+        <div>
+          <img src={'https://raw.githubusercontent.com/karan1525/Infogain/master/logos/main.png'}
+          alt=""
+          style={{margin: '75px'}}
+        />
+      </div>
       </div>
   );
 };
