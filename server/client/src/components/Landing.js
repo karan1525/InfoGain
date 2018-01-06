@@ -6,7 +6,7 @@ const Landing = () => {
         <h1>
           Infogain
         </h1>
-        <h5>Learn how to improve your business <br />by asking your consumers!</h5>
+        <h5>Improve your business <br /> with the help of your users!</h5>
         <div>
           <img src={'https://raw.githubusercontent.com/karan1525/Infogain/master/logos/main.png'}
           alt=""
