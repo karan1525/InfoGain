@@ -18,6 +18,7 @@ class Mailer extends helper.Mail {
 
   }
 
+  // Return emails formatted as helper email objects
   formatAddresses(recipients) {
     return recipients.map(({ email }) => {
       return new helper.Email(email);
@@ -30,6 +31,15 @@ class Mailer extends helper.Mail {
 
     trackingSettings.setClickTracking(clickTracking);
     this.addTrackingSettings(trackingSettings);
+  }
+
+  // A method to add the recipients to the Mailer
+  addRecipients() {
+    const personalize = new helper.Personalization();
+    this.recipients.forEach(recipient => {
+      personalize.addTo(recipient);
+    });
+    this.addPersonalization(personalize);
   }
 }
 
