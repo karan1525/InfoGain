@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const { Schema } = mongoose; // same as const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
@@ -6,4 +6,4 @@ const userSchema = new Schema({
   credits: { type: Number, default: 0 }
 });
 
-mongoose.model('users', userSchema); // a new collection of users
+mongoose.model("users", userSchema); // a new collection of users
