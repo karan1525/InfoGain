@@ -5,4 +5,6 @@
 ### Tech Stack?
 MongoDB, ExpressJS, ReactJS, NodeJS
 
-<img src="https://raw.githubusercontent.com/karan1525/InfoGain/master/logos/vector_images/vector_main_logo.png" width="500" height="700" title="Infogain"> 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/karan1525/InfoGain/master/logos/vector_images/vector_main_logo.png" width="500"   height="700" title="Infogain"> 
+</p>
