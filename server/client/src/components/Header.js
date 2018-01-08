@@ -14,39 +14,37 @@ class Header extends Component {
       return (
         <li>
           <a href="/auth/google">
-            Login With Google
-          </a>
-        </li>
-      );
+          Login With Google
+        </a>
+      </li>
+    );
 
-      default:
-      return [
+    default:
+    return [
       <li key="1"><Payments /></li>,
       <li key= "3" style={{margin: '0 10px'}}>
         Credits: {this.props.auth.credits}
       </li>,
       <li key="2"><a href="/api/logout">Logout</a></li>
-      ]
-    }
+    ]
   }
+}
 
-  render() {
-    return (
-      <div class="navbar-fixed" >
-        <nav>
-          <div className="nav-wrapper" style={{margin: '0 15px'}}>
-            <Link
-              to={this.props.auth ? '/surveys' : '/'}
-              className="left brand-logo"
-              >
-                InfoGain
-              </Link>
-              <ul className="right">
-                {this.renderContent()}
-              </ul>
-            </div>
-          </nav>
+render() {
+  return (
+    <nav>
+      <div className="nav-wrapper" style={{margin: '0 15px'}}>
+        <Link
+          to={this.props.auth ? '/surveys' : '/'}
+          className="left brand-logo"
+          >
+            InfoGain
+          </Link>
+          <ul className="right">
+            {this.renderContent()}
+          </ul>
         </div>
+      </nav>
     );
   }
 }
