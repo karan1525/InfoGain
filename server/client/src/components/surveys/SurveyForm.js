@@ -14,31 +14,54 @@ const FIELDS = [
 
 class SurveyForm extends Component {
 
-  renderFields() {
-    return _.map(FIELDS, ({label, name}) => {
-      return <Field key={name} component={SurveyField} type="text" label={label} name={name}/>
-    });
-  }
+	renderFields() {
+		return _.map(FIELDS, ({label, name}) => {
+			return <Field key={name} component={SurveyField} type="text" label={label} name={name}/>
+		});
+	}
 
-  render() {
-    return (
-      <div className="container">
-        <form onSubmit={this.props.handleSubmit(values => console.log(values))}>
-          {this.renderFields()}
-          <Link to="/surveys" className="red btn-flat white-text">
-          	Cancel
-          </Link>
-         <button type="submit" className="teal btn-flat right white-text">
-          Next
-          <i className="material-icons right">done</i>
-          </button>
+	render() {
+		return (
+			<div className="container">
+				<form onSubmit={this.props.handleSubmit(values => console.log(values))}>
+					{this.renderFields()}
+					<Link to="/surveys" className="red btn-flat white-text">
+					Cancel
+				</Link>
+				<button type="submit" className="teal btn-flat right white-text">
+					Next
+					<i className="material-icons right">done</i>
+				</button>
+			</form>
+		</div>
+	);
+}
+}
 
-        </form>
-      </div>
-    );
-  }
+// values -> an obj that contains all the parts of the form
+function validate(values) {
+	const errors = {};
+
+	if(!values.title) {
+		errors.title = 'You must provide a title!';
+	}
+	if(!values.subject) {
+		errors.subject = "Please provide a subject";
+	}
+
+	if(!values.body) {
+		errors.body = "Please provide an email body";
+	}
+
+	if(!values.recipients) {
+		errors.recipients = "Please provide recipient(s)"
+	}
+
+
+	return errors;
 }
 
 export default reduxForm({
-  form: 'surveyForm'
+	validate,
+	form: 'surveyForm'
 })(SurveyForm);
