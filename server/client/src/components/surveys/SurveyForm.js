@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom';
 import SurveyField from './SurveyField';
 
 const FIELDS = [
-	{label: 'Survey Title', name: 'title', noValueError: 'Provide a Survey title!'},
-	{label: 'Subject Line', name: 'subject', noValueError: 'Provide a Survey subject!'},
-	{label: 'Email Body', name: 'body', noValueError: 'Provide a Survey body!'},
+	{label: 'Survey Title', name: 'title', noValueError: 'Provide a survey title!'},
+	{label: 'Subject Line', name: 'subject', noValueError: 'Provide a subject line!'},
+	{label: 'Email Body', name: 'body', noValueError: 'Provide an email body!'},
 	{label: 'Recipient List', name: 'emails', noValueError: 'Provide some emails!'}
 ];
 
