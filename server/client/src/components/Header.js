@@ -27,14 +27,14 @@ class Header extends Component {
     default:
     return [
       <li key="1"><Payments /></li>,
-      
+
       <li key= "3"
         style={{margin: '0 10px', color: 'black', fontWeight:'bold', fontSize:'20px'}}>
         Credits: {this.props.auth.credits}
       </li>,
 
       <li key="2">
-        <div className="teal btn-flat left white-text">
+        <div className="btn left white-text">
         <a href="/api/logout">Logout</a>
         </div>
       </li>
