@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import $ from "jquery";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import Payments from "./Payments";
+import React, { Component } from 'react';
+import $ from 'jquery';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import Payments from './Payments';
 
 class Header extends Component {
   componentDidMount() {
-    $(".button-collapse").sideNav();
+    $('.button-collapse').sideNav();
   }
 
   renderMobileContent() {
@@ -30,10 +30,10 @@ class Header extends Component {
           <li
             key="3"
             style={{
-              margin: "0 10px",
-              color: "black",
-              fontWeight: "bold",
-              fontSize: "20px"
+              margin: '0 10px',
+              color: 'black',
+              fontWeight: 'bold',
+              fontSize: '20px'
             }}>
             Credits: {this.props.auth.credits}
           </li>,
@@ -64,7 +64,7 @@ class Header extends Component {
           <li key="1">
             <Payments />
           </li>,
-          <li key="3" style={{ margin: "0 10px" }}>
+          <li key="3" style={{ margin: '0 10px' }}>
             Credits: {this.props.auth.credits}
           </li>,
           <li key="2">
@@ -78,12 +78,12 @@ class Header extends Component {
     return (
       <div>
         <nav>
-          <div className="nav-wrapper" style={{ margin: "0 15px" }}>
+          <div className="nav-wrapper" style={{ margin: '0 15px' }}>
             <a href="" data-activates="mobile-demo" className="button-collapse">
               <i className="material-icons">menu</i>
             </a>
             <Link
-              to={this.props.auth ? "/surveys" : "/"}
+              to={this.props.auth ? '/surveys' : '/'}
               className="brand-logo">
               InfoGain
             </Link>

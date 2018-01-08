@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 const Landing = () => {
   return (
-    <div style={{ textAlign: "center" }}>
+    <div style={{ textAlign: 'center' }}>
       <h2>InfoGain</h2>
       <h5>
         Improve your business <br /> with the help of your users!
@@ -9,10 +9,10 @@ const Landing = () => {
       <div>
         <img
           src={
-            "https://github.com/karan1525/InfoGain/raw/master/logos/vector_images/vector_main.png"
+            'https://github.com/karan1525/InfoGain/raw/master/logos/vector_images/vector_main.png'
           }
           alt=""
-          style={{ margin: "75px" }}
+          style={{ margin: '75px' }}
         />
       </div>
     </div>

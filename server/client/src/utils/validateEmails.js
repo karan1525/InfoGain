@@ -3,15 +3,15 @@ const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0
 
 export default recipients => {
   const invalidEmails = recipients
-    .split(",")
+    .split(',')
     .map(email => email.trim())
     .filter(email => !re.test(email));
 
   var size = invalidEmails.length;
 
   if (
-    invalidEmails[size - 1] === "" ||
-    recipients.substr(recipients.length - 1) === ","
+    invalidEmails[size - 1] === '' ||
+    recipients.substr(recipients.length - 1) === ','
   ) {
     return `Please do not submit trailing commas in your Recipient List`;
   }
