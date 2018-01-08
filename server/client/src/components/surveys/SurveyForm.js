@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom';
 import SurveyField from './SurveyField';
 
 const FIELDS = [
-	{label: 'Survey Title', name: 'title'},
-	{label: 'Subject Line', name: 'subject'},
-	{label: 'Email Body', name: 'body'},
-	{label: 'Recipient List', name: 'emails'}
+	{label: 'Survey Title', name: 'title', noValueError: 'Provide a Survey title!'},
+	{label: 'Subject Line', name: 'subject', noValueError: 'Provide a Survey subject!'},
+	{label: 'Email Body', name: 'body', noValueError: 'Provide a Survey body!'},
+	{label: 'Recipient List', name: 'emails', noValueError: 'Provide some emails!'}
 ];
 
 class SurveyForm extends Component {
@@ -21,42 +21,32 @@ class SurveyForm extends Component {
 	}
 
 	render() {
-		return (
-			<div className="container">
-				<form onSubmit={this.props.handleSubmit(values => console.log(values))}>
-					{this.renderFields()}
-					<Link to="/surveys" className="red btn-flat white-text">
-					Cancel
-				</Link>
-				<button type="submit" className="teal btn-flat right white-text">
-					Next
-					<i className="material-icons right">done</i>
-				</button>
-			</form>
-		</div>
-	);
-}
+			return (
+				<div className="container">
+					<form onSubmit={this.props.handleSubmit(values => console.log(values))}>
+						{this.renderFields()}
+						<Link to="/surveys" className="red btn-flat white-text">
+						Cancel
+					</Link>
+					<button type="submit" className="teal btn-flat right white-text">
+						Next
+						<i className="material-icons right">done</i>
+					</button>
+				</form>
+			</div>
+		);
+	}
 }
 
 // values -> an obj that contains all the parts of the form
 function validate(values) {
 	const errors = {};
 
-	if(!values.title) {
-		errors.title = 'You must provide a title!';
-	}
-	if(!values.subject) {
-		errors.subject = "Please provide a subject";
-	}
-
-	if(!values.body) {
-		errors.body = "Please provide an email body";
-	}
-
-	if(!values.recipients) {
-		errors.recipients = "Please provide recipient(s)"
-	}
-
+	_.each(FIELDS, ({ name, noValueError}) => {
+		if(!values[name]) {
+			errors[name] = noValueError
+		}
+	});
 
 	return errors;
 }
