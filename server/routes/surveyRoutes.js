@@ -23,6 +23,11 @@ module.exports = app => {
       dateSent: Date.now()
     });
 
+    app.post('/api/surveys/webhooks', (req, res) => {
+      console.log(req.body);
+      res.send({});
+    });
+
     // Great place to send an email!
     const mailer = new Mailer(survey, surveyTemplate(survey));
 
