@@ -1,3 +1,5 @@
+// Main level index.js to connect all moving parts.
+
 const express = require('express');
 const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
