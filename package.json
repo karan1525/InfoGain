@@ -1,18 +1,25 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "description": "Backend server for InfoGain",
   "main": "index.js",
   "engines": {
     "node": "9.3.0",
-    "npm" : "5.6.0"
+    "npm": "5.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/karan1525/InfoGain.git"
   },
   "scripts": {
     "start": "node server/index.js",
     "server": "nodemon server/index.js",
     "client": "npm run start --prefix server/client",
-    "dev": "concurrently \"npm run server\" \"npm run client\" ",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix server/client && npm run build --prefix server/client"
+    "dev":
+      "concurrently \"npm run server\" \"npm run client\" \"npm run webhook\" ",
+    "heroku-postbuild":
+      "NPM_CONFIG_PRODUCTION=false npm install --prefix server/client && npm run build --prefix server/client",
+    "webhook": "ngrok http 5000"
   },
   "author": "",
   "license": "ISC",
@@ -21,10 +28,14 @@
     "concurrently": "^3.5.1",
     "cookie-session": "^2.0.0-beta.3",
     "express": "^4.16.2",
+    "localtunnel": "^1.8.3",
+    "lodash": "^4.17.4",
     "mongoose": "^5.0.0-rc1",
+    "ngrok": "^2.2.24",
     "nodemon": "^1.14.7",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0",
+    "path-parser": "^3.0.1",
     "sendgrid": "^5.2.3",
     "stripe": "^5.4.0"
   }
